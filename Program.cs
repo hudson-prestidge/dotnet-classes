@@ -6,8 +6,7 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            Car myCar = new Car();
-            myCar.Make = "Tesla";
+            Car myCar = new Car("Tesla");
             myCar.Model = "Guybrush Threepwood";
             myCar.Year = 1200;
             myCar.Color = "Purple";
@@ -31,12 +30,24 @@ namespace ConsoleApplication
         public string Model { get; set; }
         public int Year { get; set; }
         public string Color { get; set; }
-        public decimal DetermineMarketValue ()
-      {
-            decimal carValue = 100.0M;
 
+        public decimal DetermineMarketValue ()
+        {
+            decimal carValue = 100.0M;
             return carValue;
-     }
+        }
    
+        public Car(string make)
+        {
+            this.Make = make;
+            MyMethod();
+        }
+
+        public void MyMethod()
+        {
+            Console.WriteLine(this.Make);
+        }
+
+
     }
 }
